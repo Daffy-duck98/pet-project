@@ -5,7 +5,7 @@ import Header from '../header/Header';
 
 function Layout(): React.JSX.Element {
   return (
-    <div className="content">
+    <div>
       <Header />
       <Outlet />
       {/* <Footer /> */}
