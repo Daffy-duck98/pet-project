@@ -36,9 +36,9 @@ function Header(): React.JSX.Element {
         ) : (
           <>
             <Link to="/sign-up" className="mr-3">
-              Sign Up
+              SignUp
             </Link>
-            <Link to="/sign-in">Sign In</Link>
+            <Link to="/sign-in">SignIn</Link>
           </>
         )}
       </span>

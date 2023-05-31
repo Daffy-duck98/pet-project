@@ -76,7 +76,7 @@ function SignUp(): React.JSX.Element {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit} autoComplete="on">
           <div>
             <label
               htmlFor="login"
@@ -88,7 +88,6 @@ function SignUp(): React.JSX.Element {
                   id="login"
                   name="login"
                   type="text"
-                  autoComplete="login"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={login}
@@ -108,7 +107,6 @@ function SignUp(): React.JSX.Element {
                   id="email"
                   name="email"
                   type="email"
-                  autoComplete="email"
                   pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={email}
@@ -128,7 +126,6 @@ function SignUp(): React.JSX.Element {
                   id="password"
                   name="password"
                   type="password"
-                  autoComplete="current-password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={password}
@@ -148,7 +145,6 @@ function SignUp(): React.JSX.Element {
                   id="password"
                   name="password"
                   type="password"
-                  autoComplete="current-password"
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={passwordRepeat}
