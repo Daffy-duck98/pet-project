@@ -15,7 +15,7 @@ function SignUp(): React.JSX.Element {
   const navigate = useNavigate();
   const error = useSelector(selectRegisterFormError);
 
-  const handleSubmit = useCallback(
+  const handleSubmit = React.useCallback(
     async (event: React.FormEvent) => {
       event.preventDefault();
 

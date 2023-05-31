@@ -29,10 +29,9 @@ function Header(): React.JSX.Element {
           Home
         </Link>
         {user ? (
-          // eslint-disable-next-line @typescript-eslint/no-misused-promises
-          <a href="#" role="button" onClick={handleLogout}>
+          <button type="button" onClick={handleLogout}>
             LogOut
-          </a>
+          </button>
         ) : (
           <>
             <Link to="/sign-up" className="mr-3">

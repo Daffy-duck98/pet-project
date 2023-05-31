@@ -13,15 +13,12 @@ const initialState: State = {
 
 export const getUser = createAsyncThunk('auth/user', () => api.user());
 
-export const login = createAsyncThunk(
-  'auth/sign-in',
-  async (data: LoginData) => {
-    if (!data.email.trim() || !data.password.trim()) {
-      throw new Error('Не все поля заполнены');
-    }
-    return api.login(data);
+export const login = createAsyncThunk('auth/sign-in', (data: LoginData) => {
+  if (!data.email.trim() || !data.password.trim()) {
+    throw new Error('Не все поля заполнены');
   }
-);
+  return api.login(data);
+});
 
 export const register = createAsyncThunk(
   'auth/sign-up',

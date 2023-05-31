@@ -16,7 +16,6 @@ authRouter.get('/user', async (req, res) => {
 
 authRouter.post('/sign-up', async (req, res) => {
   try {
-    // eslint-disable-next-line object-curly-newline
     const { login, email, password, passwordRepeat } = req.body;
 
     const existingUser = await User.findOne({ where: { email } });
@@ -72,9 +71,9 @@ authRouter.post('/sign-in', async (req, res) => {
         email: existingUser.email,
       });
     } else {
-      res
-        .status(401)
-        .json({ error: 'Такого пользователя нет либо пароли не совпадают' });
+      res.status(401).json({
+        error: 'Такого пользователя нет либо пароли не совпадают',
+      });
     }
   } catch (error) {
     res.status(500).json({ message: error.message });
