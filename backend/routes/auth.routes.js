@@ -23,11 +23,19 @@ authRouter.post('/sign-up', async (req, res) => {
 
     if (existingUser) {
       res.status(422).json({ error: 'Такой пользователь уже есть' });
+      return;
     }
-    if (password !== passwordRepeat && password.length < 8) {
+    if (password !== passwordRepeat) {
       res.status(422).json({
-        error: 'Пароли не совпадают или пароль должен быть длинее 8 символов',
+        error: 'Пароли не совпадают ',
       });
+      return;
+    }
+    if (password.length < 7 && passwordRepeat.length < 7) {
+      res.status(422).json({
+        error: 'Пароль должен быть не менее 8 символов',
+      });
+      return;
     }
 
     const hash = await bcrypt.hash(password, 10);
