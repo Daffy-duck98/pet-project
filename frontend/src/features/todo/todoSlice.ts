@@ -26,6 +26,6 @@ const todoSlice = createSlice({
   },
 });
 
-const { resetError } = todoSlice.actions;
+// const { resetError } = todoSlice.actions;
 
 export default todoSlice.reducer;

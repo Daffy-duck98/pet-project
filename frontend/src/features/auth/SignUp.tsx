@@ -15,7 +15,7 @@ function SignUp(): React.JSX.Element {
   const navigate = useNavigate();
   const error = useSelector(selectRegisterFormError);
 
-  const handleSubmit = useCallback(
+  const handleSubmit = React.useCallback(
     async (event: React.FormEvent) => {
       event.preventDefault();
 
@@ -162,8 +162,10 @@ function SignUp(): React.JSX.Element {
               Sign up
             </button>
           </div>
+          <div className="flex justify-center">
+            <p className="text-red-600">{error}</p>
+          </div>
         </form>
-        <p>{error}</p>
       </div>
     </div>
   );

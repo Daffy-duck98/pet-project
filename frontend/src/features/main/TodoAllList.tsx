@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectTodoAllList } from '../todo/selectors';
 import { useAppDispatch } from '../../store/store';
 import { loadTodoAllTodo } from '../todo/todoSlice';
-import TodoOne from './Todo';
+import TodoOne from './TodoOne';
 
 function TodoAllList(): React.JSX.Element {
   const allTodo = useSelector(selectTodoAllList);
