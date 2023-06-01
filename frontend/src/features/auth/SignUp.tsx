@@ -162,8 +162,10 @@ function SignUp(): React.JSX.Element {
               Sign up
             </button>
           </div>
+          <div className="flex justify-center">
+            <p className="text-red-600">{error}</p>
+          </div>
         </form>
-        <p>{error}</p>
       </div>
     </div>
   );

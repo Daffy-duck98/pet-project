@@ -21,6 +21,24 @@ function Header(): React.JSX.Element {
     },
     [dispatch, navigate]
   );
+  if (user) {
+    return (
+      <nav className=" flex justify-between items-center h-[50px] px-5 shadow-md bg-gray-500 text-white">
+        <h3 className="font-bold">ToDo List</h3>
+        <span>
+          <Link to="/" className="mr-3">
+            Home
+          </Link>
+          <Link to="/profile" className="mr-3">
+            Profile
+          </Link>
+          <button type="button" onClick={handleLogout}>
+            LogOut
+          </button>
+        </span>
+      </nav>
+    );
+  }
   return (
     <nav className=" flex justify-between items-center h-[50px] px-5 shadow-md bg-gray-500 text-white">
       <h3 className="font-bold">ToDo List</h3>
@@ -28,18 +46,10 @@ function Header(): React.JSX.Element {
         <Link to="/" className="mr-3">
           Home
         </Link>
-        {user ? (
-          <button type="button" onClick={handleLogout}>
-            LogOut
-          </button>
-        ) : (
-          <>
-            <Link to="/sign-up" className="mr-3">
-              SignUp
-            </Link>
-            <Link to="/sign-in">SignIn</Link>
-          </>
-        )}
+        <Link to="/sign-up" className="mr-3">
+          SignUp
+        </Link>
+        <Link to="/sign-in">SignIn</Link>
       </span>
     </nav>
   );

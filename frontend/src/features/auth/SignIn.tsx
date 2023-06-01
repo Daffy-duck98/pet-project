@@ -25,7 +25,7 @@ function SignIn(): React.JSX.Element {
       );
 
       if (login.fulfilled.match(dispatchResult)) {
-        navigate('/');
+        navigate('/profile');
       }
 
       if (login.rejected.match(dispatchResult)) {
@@ -106,8 +106,10 @@ function SignIn(): React.JSX.Element {
               Sign in
             </button>
           </div>
+          <div className="flex justify-center">
+            <p className="text-red-600">{error}</p>
+          </div>
         </form>
-        <p>{error}</p>
       </div>
     </div>
   );
