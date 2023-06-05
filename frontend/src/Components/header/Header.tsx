@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { selectUser } from '../../features/auth/selectors';
@@ -10,7 +10,7 @@ function Header(): React.JSX.Element {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const handleLogout = React.useCallback(
+  const handleLogout = useCallback(
     async (event: React.MouseEvent) => {
       event.preventDefault();
 
@@ -21,7 +21,7 @@ function Header(): React.JSX.Element {
     },
     [dispatch, navigate]
   );
-  if (user) {
+  if (!user) {
     return (
       <nav className=" flex justify-between items-center h-[50px] px-5 shadow-md bg-gray-500 text-white">
         <h3 className="font-bold">ToDo List</h3>
@@ -29,12 +29,10 @@ function Header(): React.JSX.Element {
           <Link to="/" className="mr-3">
             Home
           </Link>
-          <Link to="/profile" className="mr-3">
-            Profile
+          <Link to="/sign-up" className="mr-3">
+            SignUp
           </Link>
-          <button type="button" onClick={handleLogout}>
-            LogOut
-          </button>
+          <Link to="/sign-in">SignIn</Link>
         </span>
       </nav>
     );
@@ -46,10 +44,12 @@ function Header(): React.JSX.Element {
         <Link to="/" className="mr-3">
           Home
         </Link>
-        <Link to="/sign-up" className="mr-3">
-          SignUp
+        <Link to="/profile" className="mr-3">
+          Profile
         </Link>
-        <Link to="/sign-in">SignIn</Link>
+        <button type="button" onClick={handleLogout}>
+          LogOut
+        </button>
       </span>
     </nav>
   );
