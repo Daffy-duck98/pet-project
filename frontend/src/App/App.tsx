@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import Layout from '../components/layout/Layout';
+import Layout from '../Components/layout/Layout';
 import SignUp from '../features/auth/SignUp';
 import SignIn from '../features/auth/SignIn';
 import { useAppDispatch } from '../store/store';
