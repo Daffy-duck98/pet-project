@@ -24,7 +24,7 @@ function Header(): React.JSX.Element {
   if (!user) {
     return (
       <nav className=" flex justify-between items-center h-[50px] px-5 shadow-md bg-gray-500 text-white">
-        <h3 className="font-bold">ToDo List</h3>
+        <h2 className="font-bold">Test-AUTH</h2>
         <span>
           <Link to="/" className="mr-3">
             Home

@@ -11,10 +11,8 @@ const PORT = process.env.PORT ?? 3000;
 config(app);
 
 const authRouter = require('./routes/auth.routes');
-const todoRouter = require('./routes/todo.routes');
 
 app.use('/api/auth', authRouter);
-app.use('/api/todo', todoRouter);
 
 async function server() {
   try {

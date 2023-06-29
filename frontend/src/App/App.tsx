@@ -7,8 +7,8 @@ import SignIn from '../features/auth/SignIn';
 import { useAppDispatch } from '../store/store';
 import { selectAuthChecked } from '../features/auth/selectors';
 import { getUser } from '../features/auth/authSlice';
-import TodoAllList from '../features/main/TodoAllList';
 import Profile from '../features/profile/Profile';
+import Main from '../features/main/Main';
 
 function App(): React.JSX.Element {
   const dispatch = useAppDispatch();
@@ -29,7 +29,7 @@ function App(): React.JSX.Element {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<TodoAllList />} />
+        <Route path="/" element={<Main />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/sign-up" element={<SignUp />} />
         <Route path="/sign-in" element={<SignIn />} />

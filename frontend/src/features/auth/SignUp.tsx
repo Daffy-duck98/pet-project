@@ -89,7 +89,6 @@ function SignUp(): React.JSX.Element {
                   name="login"
                   type="text"
                   required
-                  autoComplete="on"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={login}
                   onChange={handleLoginChange}
@@ -105,11 +104,10 @@ function SignUp(): React.JSX.Element {
               Email address
               <div className="mt-2">
                 <input
+                  pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
                   id="email"
                   name="email"
                   type="email"
-                  pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})"
-                  autoComplete="on"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={email}
                   onChange={handleEmailChange}
@@ -129,7 +127,6 @@ function SignUp(): React.JSX.Element {
                   name="password"
                   type="password"
                   required
-                  autoComplete="on"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={password}
                   onChange={handlePasswordChange}
@@ -149,7 +146,6 @@ function SignUp(): React.JSX.Element {
                   name="password"
                   type="password"
                   required
-                  autoComplete="on"
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-2 text-lg"
                   value={passwordRepeat}
                   onChange={handlePasswordRepeatChange}
